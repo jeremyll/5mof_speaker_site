@@ -2,40 +2,67 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="FitText.js/jquery.fittext.js"></script>
     <title>Five Minutes of Fame</title>
     <style>
-        body {
+        html, body {
             background: black;
             color: white;
+            height: 100%;
         }
         * {
             font-family: 'Helvetica Neue', Helvetica, Arial;
-            font-size: 6vw;
+            font-size: 6vmin;
             padding: 0;
             margin: 0;
         }
-        h1  {
-            font-size: 12vmin;
+        h1 {
+            //font-size: 12vmin;
+            font-size: 50px;
             width: 100%;
         }
         .up_next * {
             font-size: 4vmin;
             display:inline;
         }
+        .presenting {
+            margin-top: 4vh;
+            height: 35vh;
+        }
+        .presenting .name {
+            margin-top: 3vh;
+        }
         .main {
+            height: 95vh;
             margin: 0 auto;
-            width: 95%;
+            width: 95vw;
             text-align: center;
         }
-        .main img {
-            margin-top: 5%;
-        }
         .footer {
-            margin: 10 auto;
+            margin: 1vmin;
             width: 95%;
             text-align: left;
             bottom: 0;
             position: absolute;
+        }
+
+        /* Portrait */
+        @media screen and (orientation:portrait) {
+            .main img {
+                height: auto;
+                width: 100%;
+                //max-width: 95vw;
+            }
+        }
+
+        /* Landscape */
+        @media screen and (orientation:landscape) {
+            .main img {
+                width: auto;
+                height: 100%;
+                max-height: 55vh;
+            }
         }
     </style>
   </head><body>
@@ -52,5 +79,4 @@
       <h2>Up Next:</h2>
       <div contenteditable=true class="name">Next Presenter Name</div>
   </div>
-
 </body></html>
