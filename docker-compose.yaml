@@ -1,0 +1,8 @@
+5mof:
+  command: python server.py
+  build: .
+  working_dir: /data
+  volumes:
+    - '.:/data'
+  ports:
+    - "5000:5000"
