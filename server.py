@@ -26,12 +26,13 @@ def scrap(url):
     return talks
 
 @app.route('/<int:speaker_number>/')
-def hello_world(url="https://noisebridge.net/wiki/Five_Minutes_of_Fame_2016_12_08", speaker_number=0):
+def hello_world(url="https://noisebridge.net/wiki/Five_Minutes_of_Fame_2017_01_26", speaker_number=0):
     talks = scrap(url)
 
     try:
         current_talk = talks[speaker_number]
         title = current_talk.get('title', '').strip('"\'')
+        title = title.split('(')[0]
     except KeyError:
         current_talk = None
         title = 'Welcome to Five Minutes of Fame. First Talk Tonight @ 8pm' if speaker_number == 0 else \
